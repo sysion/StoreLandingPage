@@ -16,14 +16,12 @@ html{
 body{
 	font-size: 1.6rem;
 	color: rgba(23, 23, 23, 0.8);
-	/*color: #000000;*/
 }
 
 a{
 	text-decoration: none;
 }
 
-/* h1 font-size in normalize.css is 2em => 2 x 16px = 32px */
 h1{
 	font-size: 3rem;
 	margin: 0.5rem;
@@ -56,17 +54,10 @@ ul{
 	width: 98%;
 	margin: 0 auto;
 	padding: 1rem;
-
-	/*display: grid;
-	grid-template-rows: 40rem 1fr 20rem;
-	*grid-auto-rows: minmax(10rem, auto);*/
 }
 
 header{
 	width: 100%;
-	/*height: 40rem;
-	background: rgba(240,240,240,0.7);
-	box-shadow: 1rem 1rem 0 0 #aaaaaa;*/
 	background: #000000;
 	color: #ffffff;
 }
@@ -93,51 +84,67 @@ header{
 	background-size: cover;
 }
 
+.mobile-menu{
+	font-size: 2rem;
+}
+
+nav{
+	position: relative;
+}
+
 nav ul{
+	position: absolute;
+	top: 5rem;
+	right: 0;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	z-index: 99;
+	background: rgba(255, 255, 255, 0.8);
 }
 
 nav li{
-	width: 10rem;
-	height: 100%;
-	margin: 0 1rem;
+	width: 12rem;
+	height: 4rem;
+	/*margin: 0 1rem;*/
 	text-transform: capitalize;
 	text-align: center;
 	font-size: 1.8rem;
+	line-height: 4rem;
 }
 
 nav a{
 	width: 100%;
 	height: 100%;
-	color: #ffffff;
+	color: #000000;
 	font-weight: bold;
 }
 
+.mobile-menu{
+	color: #ffffff;
+}
+
 nav li:hover{
-	border-bottom: 0.2rem solid #ffffff;
+	/*border-bottom: 0.2rem solid #ffffff;*/
+	background: rgba(0, 0, 0, 0.75);
 }
 
 .header-bottom{
 	width: 100%;
-	/*height: 35rem;*/
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 }
 
 .promo{
-	width: 30%;
-	/*height: 100%;*/
+	width: 100%;
 	text-align: center;
 }
 
 .promo-image{
-	width: 50%;
-	/*height: 100%;*/
+	width: 100%;
 }
 
 .promo-image img{
@@ -161,38 +168,6 @@ nav li:hover{
 	font-size: 2rem;
 }
 
-/* *height of each comment section not equal*
-.feedbacks{
-	width: 100%;
-	padding: 2rem;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.comment{
-	flex: 1 1 20rem;
-	position: relative;
-	border: 1px solid red;
-}
-
-.comment img{
-	width: 10rem;
-	height: 10rem;
-	border-radius: 10rem;
-	position: absolute;
-	top: -5rem;
-	left: 50%;
-	margin-left: -5rem;
-}
-
-.comment article{
-	margin-top: 5rem;
-	padding: 1rem;
-}
-*/
-
 .review h1{
 	text-transform: capitalize;
 	text-align: center;
@@ -202,20 +177,16 @@ nav li:hover{
 	width: 100%;
 	padding: 2rem;
 	display: grid;
-	grid-template-columns: repeat(4, minmax(20rem, 1fr));
-	/*grid-gap: 1rem;*/
+	grid-template-columns: minmax(20rem, 1fr);
 	grid-column-gap: 3rem;
-	grid-row-gap: 1rem;
+	grid-row-gap: 8rem;
 	margin-top: 5rem;
 }
 
 .comment{
 	position: relative;
-	/*border: 1px solid red;*/
 	background: #ffffff;
 	border-radius: 1rem;
-	/*box-shadow: -1rem -1rem 2rem rgba(0, 0, 0, 0.2), 1rem 1rem 2rem rgba(0, 0, 0, 0.2);*/
-	/*box-shadow: 1rem 1rem 0 rgba(0, 0, 0, 0.1);*/
 	box-shadow: -1rem -1rem 0 rgba(0, 0, 0, 0.1), 1rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -237,7 +208,6 @@ nav li:hover{
 footer{
 	width: 100%;
 	height: 25rem;
-	/*background: rgba(240,240,240,0.7);*/
 	margin-top: 5rem;
 	background: #000000;
 	color: #ffffff;
@@ -262,3 +232,44 @@ footer{
 	text-align: center;
 }
 
+@media screen and (min-width: 481px){
+	.feedbacks{
+		grid-template-columns: repeat(2, minmax(20rem, 1fr));
+	}
+}
+
+@media screen and (min-width: 768px){
+	.mobile-menu{
+		display: none;
+	}
+
+	nav ul{
+		position: static;
+		flex-direction: row;
+		background: none;
+	}
+
+	nav li{
+		width: 10rem;
+		height: 100%;
+		margin: 0 1rem;
+	}
+
+	nav li:hover{
+		border-bottom: 0.2rem solid #ffffff;
+	}
+
+	nav a{
+		color: #ffffff;
+	}
+
+	.feedbacks{
+		grid-template-columns: repeat(3, minmax(20rem, 1fr));
+	}
+}
+
+@media screen and (min-width: 1024px){
+	.feedbacks{
+		grid-template-columns: repeat(4, minmax(20rem, 1fr));
+	}
+}
