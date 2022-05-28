@@ -84,19 +84,24 @@ header{
 	background-size: cover;
 }
 
-.mobile-menu{
-	font-size: 2rem;
-}
-
 nav{
 	position: relative;
+}
+
+.hide-mobile{
+	transition: all 0.5s linear;
+	transform: translateX(150%);
+}
+
+.show-mobile{
+	transform: translateX(0);
 }
 
 nav ul{
 	position: absolute;
 	top: 5rem;
 	right: 0;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
@@ -122,12 +127,20 @@ nav a{
 }
 
 .mobile-menu{
+	font-size: 2rem;
 	color: #ffffff;
+
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	text-align: center;
+	line-height: 3rem;
 }
 
 nav li:hover{
 	/*border-bottom: 0.2rem solid #ffffff;*/
-	background: rgba(0, 0, 0, 0.75);
+	/*background: rgba(0, 0, 0, 0.75);*/
+	background: #ffffff;
 }
 
 .header-bottom{
@@ -226,6 +239,10 @@ footer{
 	color: #ffffff;
 }
 
+.f-social:hover{
+	color: #aa2222;
+}
+
 .copyright{
 	width: 100%;
 	height: 40%;
@@ -245,6 +262,7 @@ footer{
 
 	nav ul{
 		position: static;
+		display: flex;
 		flex-direction: row;
 		background: none;
 	}
@@ -257,10 +275,24 @@ footer{
 
 	nav li:hover{
 		border-bottom: 0.2rem solid #ffffff;
+
+		background: none;
 	}
 
 	nav a{
 		color: #ffffff;
+	}
+
+	.header-bottom{
+		flex-direction: row;
+	}
+
+	.promo{
+		width: 30%;
+	}
+
+	.promo-image{
+		width: 50%;
 	}
 
 	.feedbacks{
