@@ -12,8 +12,27 @@ mobile_menu.addEventListener('click', (event) => {
 	}
 });
 
+window.addEventListener('deviceorientation', (event) => {
+	window.location.reload();
+});
+
+window.addEventListener('orientationchange', (event) => {
+	/*var orientation = window.orientation;
+	switch (orientation){
+		case 0:
+		case 90:
+		case -90: window.location.reload();
+		break; 
+	}*/
+	window.location.reload();
+});
+
+//window.addEventListener('load', (event) => {
 window.addEventListener('DOMContentLoaded', (event) => {
-	if (mobile_menu.style.display !== '' && mobile_menu.style.display !== 'none'){
-		console.log('yes');
+	if (window.getComputedStyle(mobile_menu).display === 'block'){
+		ul_menu.style.display = 'none';
+	}
+	else{
+		ul_menu.style.display = 'flex';
 	}
 });

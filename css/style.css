@@ -137,6 +137,13 @@ nav a{
 	line-height: 3rem;
 }
 
+/*.fa-bars{
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	line-height: 3rem;
+}*/
+
 nav li:hover{
 	/*border-bottom: 0.2rem solid #ffffff;*/
 	/*background: rgba(0, 0, 0, 0.75);*/
