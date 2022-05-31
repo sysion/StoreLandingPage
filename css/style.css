@@ -1,3 +1,4 @@
+/* THIS portion ok also, just trying some codes from Bootstrap.css
 *{
 	box-sizing: border-box;
 	margin: 0;
@@ -5,17 +6,44 @@
 }
 
 html{
-	width: 100%;                                /* 100% width of parent (root) element */
-	height: 100vh;                              /* 100% height of viewport */
-	background: rgba(255, 255, 255, 0.8);       /* 80% white */
-	font-family: arial, verdana, sans-serif, tahoma, helvetica, courier;
-	font-size: 62.5%;                           /* our root font size - 10px */
-	/*font-size: 1em;                             * our root font size - 16px hence 1em = 16px*/
+	width: 100%;                                * 100% width of parent (root) element *
+	height: 100vh;                              * 100% height of viewport *
+	background: rgba(255, 255, 255, 0.8);       * 80% white *
+	font-family: Arial, Verdana, sans-serif, Tahoma, Helvetica, Courier;
+	font-size: 62.5%;                           * our root font size - 10px *
 }
 
 body{
 	font-size: 1.6rem;
 	color: rgba(23, 23, 23, 0.8);
+}
+*/
+
+*{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+}
+
+body{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.42857143;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8); 
 }
 
 a{
@@ -88,20 +116,26 @@ nav{
 	position: relative;
 }
 
-.hide-mobile{
+.hide-menu{
 	transition: all 0.5s linear;
+	/*transform: translateY(-150%);*/
 	transform: translateX(150%);
 }
 
-.show-mobile{
+.show-menu{
+	/*transform: translateY(0);*/
 	transform: translateX(0);
+}
+
+.remove-menu{
+	display: none;
 }
 
 nav ul{
 	position: absolute;
 	top: 5rem;
 	right: 0;
-	display: none;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
