@@ -8,8 +8,8 @@ mobile_menu.addEventListener('click', (event) => {
 			ul_menu.classList.add('show-menu');
 			setTimeout(()=>{
 				ul_menu.classList.remove('hide-menu');
-			}, 20);
-		}, 500);
+			}, 500);
+		}, 20);
 	}
 	else if (window.getComputedStyle(ul_menu).display === 'flex'){
 		ul_menu.classList.remove('show-menu');
@@ -22,15 +22,7 @@ mobile_menu.addEventListener('click', (event) => {
 	}
 });
 
-window.addEventListener('deviceorientation', (event) => {
-	//window.location.reload();
-}, 500);
-
-window.addEventListener('orientationchange', (event) => {
-	//window.location.reload();
-}, 500);
-
-window.addEventListener('DOMContentLoaded', (event) => {
+let pageSetup = (()=>{
 	if (window.getComputedStyle(mobile_menu).display === 'block'){
 		ul_menu.classList.add('remove-menu');
 		ul_menu.classList.add('hide-menu');
@@ -42,3 +34,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		ul_menu.classList.add('show-menu');
 	}
 });
+
+screen.orientation.addEventListener('change', (event) => {
+	if (window.getComputedStyle(mobile_menu).display === 'block'){
+		pageSetup();
+		window.location.reload();
+	}
+});
+
+window.addEventListener('DOMContentLoaded', pageSetup);
