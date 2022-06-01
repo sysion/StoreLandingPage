@@ -9,7 +9,7 @@ mobile_menu.addEventListener('click', (event) => {
 			setTimeout(()=>{
 				ul_menu.classList.remove('hide-menu');
 			}, 20);
-		}, 20);
+		}, 500);
 	}
 	else if (window.getComputedStyle(ul_menu).display === 'flex'){
 		ul_menu.classList.remove('show-menu');
