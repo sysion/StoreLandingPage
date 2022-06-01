@@ -23,11 +23,11 @@ mobile_menu.addEventListener('click', (event) => {
 });
 
 window.addEventListener('deviceorientation', (event) => {
-	window.location.reload();
+	//window.location.reload();
 }, 500);
 
 window.addEventListener('orientationchange', (event) => {
-	window.location.reload();
+	//window.location.reload();
 }, 500);
 
 window.addEventListener('DOMContentLoaded', (event) => {
